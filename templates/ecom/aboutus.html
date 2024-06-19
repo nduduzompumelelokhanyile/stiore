@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/x-icon" href="{% static 'images/logo/meatBroker Logo.png' %}" />
+  <title>Meat Brokers</title>
+  <style media="screen">
+    .footer{
+      position: fixed;
+    }
+  </style>
+</head>
+
+<body style="background-image: url('{% static 'images/bg.jpg' %}'); background-size: cover;">
+  {%if request.user.is_authenticated%}
+    {% include "ecom/customer_navbar.html" %} <!--only request.user.is_authenticated-->
+  {%else%}
+    {% include "ecom/navbar.html" %}
+  {%endif%}
+  <br><br><br>
+  <h3 style="text-align:center; color: white;">🥩 Welcome to MeatBrokers Pty Ltd - Your Premier Online Butchery 🥩 </h3>
+  <br><br>
+  <h4 style="text-align:center; color: white;">
+    At MeatBrokers, we're passionate about delivering the finest quality meats right to your doorstep. As your trusted online butcher, we source only the freshest cuts from local farms and suppliers, ensuring that every bite is a true taste sensation.
+    With a commitment to excellence and a dedication to customer satisfaction, we strive to provide you with a seamless shopping experience. From succulent steaks to tender roasts, juicy burgers to flavorful sausages, our diverse selection has something to please every palate.
+    Whether you're planning a family barbecue, a cozy dinner for two, or simply stocking up your freezer, we've got you covered. Explore our wide range of premium meats, place your order with confidence, and let us handle the rest.
+    Join the MeatBrokers family today and discover the convenience of online butchery shopping without compromising on quality. Freshness, flavor, and satisfaction - that's the MeatBrokers promise. 
+  </h4>
+  <br>
+  <h3 style="text-align:center; color: white;">“MeatBrokers Pty Ltd” </h3>
+  <br><br><br><br><br><br><br><br><br><br>
+  {% include "ecom/footer.html" %}
+</body>
+
+</html>
